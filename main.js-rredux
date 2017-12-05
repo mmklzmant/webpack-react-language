@@ -1,0 +1,39 @@
+//main.js
+import React from 'react';
+import ReactDom from 'react-dom';
+import RReduxComponent from './src/components/test/RReduxComponent.jsx';
+import { createStore } from 'redux';
+import { Provider, connect } from 'react-redux'
+// import counter from './src/reducers/test.js';
+import counter from './src/reducers/rreduxTest.js';
+
+const store = createStore(counter);
+
+// Map Redux state to component props
+function mapStateToProps(state) {
+    return {
+        value: state.count
+    }
+}
+// Map Redux actions to component props
+function mapDispatchToProps(dispatch) {
+    return {
+        onIncreaseClick: () => dispatch({type: 'increase'})
+    }
+}
+// Connected Component
+const App = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(RReduxComponent);
+
+const render = () => ReactDom.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);
+
+render();
+
+store.subscribe(render);

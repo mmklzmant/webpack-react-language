@@ -1,9 +1,16 @@
 //main.js
 import React from 'react';
 import ReactDom from 'react-dom';
-import TestComponent from './src/components/test/TestComponent.jsx';
+import { Provider, connect } from 'react-redux'
+import counter from './src/reducers/rreduxTest.js';
+import Routing from './src/components/routing.component.jsx';
 
-ReactDom.render(
-    <TestComponent />,
+import { createStore } from 'redux';
+
+const render = () => ReactDom.render(
+        <Routing/>,
     document.getElementById('root')
 );
+
+render();
+

@@ -1,0 +1,31 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
+
+// const RReduxComponent = props =>{
+//     return (
+//         <div>
+//             <span>{value}</span>
+//             <button onClick={onIncreaseClick}>Increase</button>
+//         </div>
+//     )
+// }
+class RReduxComponent extends Component {
+    render() {
+        const { value, onIncreaseClick } = this.props
+        return (
+            <div>
+                <span>{value}</span>
+                <button onClick={onIncreaseClick}>Increase</button>
+            </div>
+        )
+    }
+}
+RReduxComponent.propTypes = {
+    value: PropTypes.number.isRequired,
+    onIncreaseClick: PropTypes.func.isRequired
+}
+
+
+//导出组件
+export default RReduxComponent;
