@@ -8,8 +8,8 @@ import { Provider, connect } from 'react-redux'
 // Map Redux state to component props
 function mapStateToProps(state) {
     return {
-        value: state.count,
-        msg: state.msg
+        value: state.counter.count,
+        msg: state.counter.msg
     }
 }
 // Map Redux actions to component props

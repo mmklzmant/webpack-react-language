@@ -1,10 +1,10 @@
 import React from 'react';
-import HomeComponent from '../components/home/HomeComponent.jsx';
+import LanguageComponent from '../components/language/LanguageComponent.jsx';
 import {connect} from 'react-redux';
 
 function mapStateToProps(state) {
     return {
-        content: state.home.content
+        name: state.language.name
     }
 }
 
@@ -13,9 +13,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 //connect
-const Home = connect(
+const Language = connect(
     mapStateToProps,
     mapDispatchToProps
-)(HomeComponent);
+)(LanguageComponent);
 
-export default Home;
+export default Language;

@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 function mapStateToProps(state) {
     return {
-        content: state.content
+        content: state.contact.content
     }
 }
 

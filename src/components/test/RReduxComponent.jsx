@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 
 const RReduxComponent = props =>{
+    console.log("RRedux prop======", props);
     const { value, onIncreaseClick, msg } = props
     return (
         <div>

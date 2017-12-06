@@ -4,7 +4,7 @@ import { Provider, connect } from 'react-redux'
 
 function mapStateToProps(state) {
     return {
-        content: state.content
+        content: state.about.content
     }
 }
 
