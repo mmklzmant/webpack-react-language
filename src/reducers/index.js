@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+import { intlReducer } from 'react-intl-redux'
 
 import about from './about.js';
 import counter from './rreduxTest.js';
@@ -7,6 +8,7 @@ import home from './home.js';
 import contact from './contact.js';
 import language from './language.js';
 import navigator from './navigator.js';
+import locales from './localesReducer.js';
 
 const reducer =  combineReducers({
     lang,
@@ -15,6 +17,8 @@ const reducer =  combineReducers({
     home,
     contact,
     language,
-    navigator
+    navigator,
+    intl: intlReducer,
+    locales: localesReducer
 });
 export default reducer;

@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom';
 import {Provider, connect} from 'react-redux'
 import {createStore} from 'redux'
-import {IntlProvider, addLocaleData} from 'react-intl';
+import {addLocaleData} from 'react-intl';
+import { IntlProvider, intlReducer, updateIntl } from 'react-intl-redux'
 import en from 'react-intl/locale-data/en';
 import zh from 'react-intl/locale-data/zh';
 import zh_CN from "../locale/zh_CN";
@@ -22,6 +23,8 @@ import Contact from '../containers/Contact.jsx';
 import Language from '../containers/Languages.jsx';
 
 addLocaleData([...en, ...zh]);
+const UPDATE_LOCALES = 'UPDATE_LOCALES';
+
 const store = createStore(reducer);
 
 function getLang(props) {

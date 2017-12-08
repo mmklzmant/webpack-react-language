@@ -2,9 +2,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {createStore} from 'redux';
-import {Provider, connect} from 'react-redux'
+import {connect} from 'react-redux'
 import Root from './src/components/routing.component.jsx';
 import reducer from './src/reducers/index.js';
+import { Provider } from 'react-intl-redux'
 
 const store = createStore(reducer);
 
